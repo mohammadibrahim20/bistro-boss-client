@@ -59,7 +59,7 @@ const AllUsers = () => {
                 <td>{user.email}</td>
                 <td>
                   {user.role === "admin" ? (
-                    "admin"
+                    <span className="text-green-600 font-semibold">Admin</span>
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user)}
