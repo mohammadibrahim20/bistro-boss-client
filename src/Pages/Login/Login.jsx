@@ -8,6 +8,7 @@ import {
 } from "react-simple-captcha";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -126,6 +127,7 @@ const Login = () => {
                 New Here? <Link to="/signup">Create an account</Link>
               </small>
             </p>
+            <SocialLogin />
           </div>
         </div>
       </div>
