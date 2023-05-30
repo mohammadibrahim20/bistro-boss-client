@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../Providers/AuthProvider";
+import useAuth from "./useAuth";
 
 const useAxiosSecure = () => {
   const navigate = useNavigate();
-  const { logOut } = useContext(AuthContext);
+  const { logOut } = useAuth();
 
   const axiosSecure = axios.create({
     baseURL: "http://localhost:5000",
@@ -17,7 +17,7 @@ const useAxiosSecure = () => {
 
       // Inject authorization header with the access token
       if (accessToken) {
-        config.headers.Authorization = `Bearer ${accessToken}`;
+        config.headers.authorization = `Bearer ${accessToken}`;
       }
 
       return config;
