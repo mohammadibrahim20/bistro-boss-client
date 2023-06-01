@@ -42,9 +42,8 @@ const Dashbord = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/additems">
-                  <FaUtensils /> Add Items
-                  <span className="badge badge-secondary">+{cart.length}</span>
+                <NavLink to="/dashboard/addItem">
+                  <FaUtensils /> Add An Item
                 </NavLink>
               </li>
               <li>
