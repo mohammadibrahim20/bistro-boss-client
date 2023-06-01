@@ -3,6 +3,7 @@ import Dashbord from "../Layout/Dashbord";
 import Main from "../Layout/Main";
 import AddItem from "../Pages/Dahsboard/AddItem/AddItem";
 import AllUsers from "../Pages/Dahsboard/AllUsers/AllUsers";
+import ManageItems from "../Pages/Dahsboard/ManageItems/ManageItems";
 import MyCart from "../Pages/Dahsboard/MyCart/MyCart";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -73,6 +74,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddItem />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageitems",
+        element: (
+          <AdminRoute>
+            <ManageItems />
           </AdminRoute>
         ),
       },
