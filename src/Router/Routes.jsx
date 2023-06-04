@@ -2,10 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashbord from "../Layout/Dashbord";
 import Main from "../Layout/Main";
 import AddItem from "../Pages/Dahsboard/AddItem/AddItem";
+import AdminHome from "../Pages/Dahsboard/AdminHome/AdminHome";
 import AllUsers from "../Pages/Dahsboard/AllUsers/AllUsers";
 import ManageItems from "../Pages/Dahsboard/ManageItems/ManageItems";
 import MyCart from "../Pages/Dahsboard/MyCart/MyCart";
 import Payment from "../Pages/Dahsboard/Payment/Payment";
+import UserHome from "../Pages/Dahsboard/UserHome/UserHome";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Menu from "../Pages/Menu/Menu/Menu";
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "userhome",
+        element: (
+          <PrivateRoutte>
+            <UserHome />
+          </PrivateRoutte>
+        ),
+      },
+      {
         path: "mycart",
         element: <MyCart />,
       },
@@ -88,6 +98,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <ManageItems />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "adminhome",
+        element: (
+          <AdminRoute>
+            <AdminHome />
           </AdminRoute>
         ),
       },
